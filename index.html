@@ -112,27 +112,57 @@
         <img src="images/logo.png" alt="Logo" class="h-12 w-auto mr-4">
     </div>
 
-    <!-- Navigation Items (Align to the right) -->
-    <nav class="flex space-x-6">
+    <!-- Navigation Items (Desktop View) -->
+    <nav class="hidden md:flex space-x-6">
         <a href="#home" class="text-theme font-semibold hover:text-gray-700">Home</a>
         <a href="#about" class="text-theme font-semibold hover:text-gray-700">About</a>
         <a href="#services" class="text-theme font-semibold hover:text-gray-700">Services</a>
         <a href="#contact" class="text-theme font-semibold hover:text-gray-700">Contact</a>
     </nav>
+
+    <!-- Hamburger Menu for Mobile (Visible only on small screens) -->
+    <div class="md:hidden flex items-center" id="hamburger-menu">
+        <button class="text-theme focus:outline-none" id="hamburger-icon">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
 </header>
 
+<!-- Mobile Navigation (Hidden by default) -->
+<div id="mobile-nav" class="md:hidden hidden bg-white shadow-md">
+    <nav class="flex flex-col items-center space-y-4 py-4">
+        <a href="#home" class="text-theme font-semibold hover:text-gray-700">Home</a>
+        <a href="#about" class="text-theme font-semibold hover:text-gray-700">About</a>
+        <a href="#services" class="text-theme font-semibold hover:text-gray-700">Services</a>
+        <a href="#contact" class="text-theme font-semibold hover:text-gray-700">Contact</a>
+    </nav>
+</div>
+
+<script>
+    // Toggle mobile navigation visibility
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    hamburgerIcon.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+    });
+</script>
+
 <!-- Left Vertical Line -->
-<div class="left-line"></div>
+<div class="left-line hidden md:block"></div>
 
 <!-- Banner Section -->
 <section class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-theme text-white p-8 pb-0 rounded-lg mt-4">
     <!-- Left Grid: Centered Wording -->
     <div class="flex flex-col justify-center">
-        <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
-        <h2 class="text-2xl font-light mb-6">We provide the best solutions for your needs.</h2>
+        <h1 class="text-4xl font-bold mb-4">Transforming Challenges into
+        Seamless IT Solutions.</h1>
+        <h2 class="text-2xl font-light mb-6">Elevate your IT Infrastructure with #TeamTebits</h2>
         <p class="mb-6">Discover more about our services and see how we can help you achieve your goals.</p>
         <!-- Button -->
-        <a href="#consultation" class="inline-block bg-[#DCE46B] text-[#174FA2] font-bold py-3 px-6 rounded-lg hover:bg-[#c3c13e] transition-all">
+        <a href="#contact-form" class="inline-block bg-[#DCE46B] text-[#174FA2] font-bold py-3 px-6 rounded-lg hover:bg-[#c3c13e] transition-all">
             Book Consultation Now
         </a>
     </div>
@@ -145,10 +175,10 @@
 
 <!-- Trusted by These Companies Section -->
 <section class="my-12">
-    <h2 class="text-center text-3xl font-bold mb-6 text-[#174FA2]">Trusted by These Companies</h2>
+    <h2 class="text-center text-3xl font-bold mb-6 text-[#174FA2]">Our Partners</h2>
 
     <!-- Logos Display Section -->
-    <div class="flex justify-center space-x-6">
+    <div class="hidden md:flex justify-center space-x-6">
         <!-- Logos (6 logos displayed in a row) -->
         <img src="images/logo1.png" alt="Company 1" class="h-16">
         <img src="images/logo2.png" alt="Company 2" class="h-16">
@@ -157,7 +187,20 @@
         <img src="images/logo5.png" alt="Company 5" class="h-16">
         <img src="images/logo6.png" alt="Company 6" class="h-16">
     </div>
+
+    <!-- Carousel for Mobile (displayed on mobile view) -->
+    <div class="md:hidden">
+        <div class="flex overflow-x-auto space-x-6">
+            <img src="images/logo1.png" alt="Company 1" class="h-16 flex-shrink-0">
+            <img src="images/logo2.png" alt="Company 2" class="h-16 flex-shrink-0">
+            <img src="images/logo3.png" alt="Company 3" class="h-16 flex-shrink-0">
+            <img src="images/logo4.png" alt="Company 4" class="h-16 flex-shrink-0">
+            <img src="images/logo5.png" alt="Company 5" class="h-16 flex-shrink-0">
+            <img src="images/logo6.png" alt="Company 6" class="h-16 flex-shrink-0">
+        </div>
+    </div>
 </section>
+
 
 <!-- Feature / Why Choose Us Section -->
 <section class="my-20 px-6 md:px-12">
@@ -179,7 +222,7 @@
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-[#174FA2]">Pro Team</h3>
-                    <p class="text-gray-700">Sit ed perspiciatis unde omnis iste natus error sit voluptatem veritatis iste accusantium aperiam doloremque sed aperiam voluptatem.</p>
+                    <p class="text-gray-700">We provide insightful strategies and innovative solutions to help you succeed in your goals. Our expert team is committed to offering quality advice and guidance to drive growth and achieve lasting success.</p>
                 </div>
             </div>
 
@@ -190,7 +233,7 @@
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-[#174FA2]">Great Experience</h3>
-                    <p class="text-gray-700">Iste sit aperiam ed unde omnis iste natus error sit voluptatem veritatis iste accusantium aperiam doloremque sed aperiam voluptatem.</p>
+                    <p class="text-gray-700">We prioritize delivering a seamless experience that exceeds expectations. Our approach is tailored to each client's needs, ensuring effective solutions that leave a lasting impact.</p>
                 </div>
             </div>
         </div>
@@ -284,7 +327,7 @@
         </div>
 
         <!-- Service Box 4 -->
-        <div class="service-box" style="background-image: url('your-image4.jpg');">
+        <div class="service-box" style="background-image: url('images/pm.png');">
             <div class="service-overlay"></div>
             <div class="service-content">
                 <h3 class="text-2xl font-bold mb-2">Project Management</h3>
@@ -295,7 +338,7 @@
         </div>
 
         <!-- Service Box 5 -->
-        <div class="service-box" style="background-image: url('your-image5.jpg');">
+        <div class="service-box" style="background-image: url('images/uat.png');">
             <div class="service-overlay"></div>
             <div class="service-content">
                 <h3 class="text-2xl font-bold mb-2">User Acceptance Testing</h3>
@@ -306,7 +349,7 @@
         </div>
 
         <!-- Service Box 6 -->
-        <div class="service-box" style="background-image: url('your-image6.jpg');">
+        <div class="service-box" style="background-image: url('images/data.png');">
             <div class="service-overlay"></div>
             <div class="service-content">
                 <h3 class="text-2xl font-bold mb-2">Data Analytics</h3>
@@ -495,22 +538,21 @@
 
 <!-- Contact Form Section -->
 <section id="contact-form" class="py-16 px-6 bg-gray-100">
-    <h2 class="text-center text-3xl font-semibold text-[#174FA2] mb-10">Get in Touch</h2>
+    <h2 class="text-center text-3xl font-semibold text-[#174FA2] mb-10">Let's Talk</h2>
 
     <!-- Form Wrapper for Centering -->
-    <form class="max-w-4xl mx-auto space-y-6">
-        
+    <form id="contactForm" class="max-w-4xl mx-auto space-y-6" action="https://formspree.io/f/mldenanr" method="POST">
         <!-- Name Fields Side by Side -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- First Name -->
             <div class="w-full">
                 <label for="firstName" class="block text-gray-600 font-medium mb-2">First Name</label>
-                <input type="text" id="firstName" name="firstName" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="John">
+                <input type="text" id="firstName" name="firstName" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="John" required>
             </div>
             <!-- Last Name -->
             <div class="w-full">
-                <label for="lastName" class="block text-gray-600 font-medium mb-2">Last Name</label>
-                <input type="text" id="lastName" name="lastName" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="Doe">
+                <label for="email" class="block text-gray-600 font-medium mb-2">Email Address</label>
+                <input type="email" id="lastName" name="lastName" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="john@gmail.com" required>
             </div>
         </div>
 
@@ -519,13 +561,14 @@
             <!-- Company -->
             <div class="w-full">
                 <label for="company" class="block text-gray-600 font-medium mb-2">Company (or Personal)</label>
-                <input type="text" id="company" name="company" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="Company or 'Personal'">
+                <input type="text" id="company" name="company" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="Company or 'Personal'" required>
             </div>
             <!-- Services Dropdown -->
             <div class="w-full">
                 <label for="services" class="block text-gray-600 font-medium mb-2">Services</label>
-                <select id="services" name="services" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]">
+                <select id="services" name="services" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" required>
                     <option value="" disabled selected>Select a service</option>
+                    <option value="digital">Digital Systems & Solutions</option>
                     <option value="uiux-design">UI/UX Design</option>
                     <option value="backend-infrastructure">Backend Infrastructure</option>
                     <option value="project-management">Project Management</option>
@@ -537,7 +580,7 @@
         <!-- Project Description Field Full Width -->
         <div class="w-full">
             <label for="projectDescription" class="block text-gray-600 font-medium mb-2">Project Description (Briefly)</label>
-            <textarea id="projectDescription" name="projectDescription" rows="4" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="Provide a brief description..."></textarea>
+            <textarea id="projectDescription" name="projectDescription" rows="4" class="w-full border border-gray-300 rounded-lg p-3 bg-transparent placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#174FA2]" placeholder="Provide a brief description..." required></textarea>
         </div>
 
         <!-- Submit Button Centered -->
@@ -548,6 +591,20 @@
         </div>
     </form>
 </section>
+
+<script>
+    // Ensure form validation before submission
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        const form = event.target;
+        
+        // Check if the form is valid (all fields required)
+        if (!form.checkValidity()) {
+            event.preventDefault();  // Prevent form submission if invalid
+            alert("Please fill in all required fields.");
+        }
+    });
+</script>
+
 
 <!-- Footer Section -->
 <footer class="bg-[#174FA2] text-white py-12 px-6 rounded-lg mb-12">
@@ -581,8 +638,8 @@
                 <h3 class="text-lg font-semibold text-white">Quick Links</h3>
                 <ul class="mt-4 space-y-3">
                     <li><a href="#" class="text-white hover:text-[#174FA2] transition duration-200">Home</a></li>
+                    <li><a href="#" class="text-white hover:text-[#174FA2] transition duration-200">About</a></li>
                     <li><a href="#" class="text-white hover:text-[#174FA2] transition duration-200">Services</a></li>
-                    <li><a href="#" class="text-white hover:text-[#174FA2] transition duration-200">Portfolio</a></li>
                     <li><a href="#" class="text-white hover:text-[#174FA2] transition duration-200">Contact</a></li>
                 </ul>
             </div>
@@ -590,15 +647,16 @@
             <!-- Contact Information -->
             <div class="text-center md:text-left">
                 <h3 class="text-lg font-semibold text-white">Contact Us</h3>
-                <p class="mt-4 text-white">1234 Street Name, City, Country</p>
-                <p class="mt-2 text-white">Phone: +123 456 7890</p>
-                <p class="mt-2 text-white">Email: info@company.com</p>
+                <p class="mt-4 text-white">Pulau Angsa, U10</p>
+                <p class="mt-2 text-white">Shah Alam, Selangor</p>
+                <p class="mt-2 text-white">Email: admin@getebits.com</p>
+                <p class="mt-2 text-white">Mobile: +6017 621 3174</p>
             </div>
         </div>
 
         <!-- Footer Bottom Section -->
-        <div class="border-t border-gray-700 pt-6 text-center">
-            <p class="text-white text-sm">© 2024 Company Name. All rights reserved.</p>
+        <div class="border-t border-white pt-6 text-center">
+            <p class="text-white text-sm">© 2024 TEBITS Enterprise. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -608,4 +666,3 @@
 
 </body>
 </html>
-
